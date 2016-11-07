@@ -8,6 +8,9 @@
         Dim SentinelString() As Byte = {73, 116, 83, 116, 97, 114, 116, 115, 72, 101, 114, 101}
 
         Dim plainText As String = Form1.txtPlaintext.Text
+        plainText = plainText.Replace("'", "")
+        plainText = plainText.Replace("""", "")
+        plainText = plainText.Replace("…", "")
         Dim PlainTextByteArray(plainText.Length) As Byte
         For i As Integer = 0 To (plainText.Length - 1)
             PlainTextByteArray(i) = CByte(AscW(plainText.Chars(i)))
